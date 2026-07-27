@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>that_stickman</title>
+<link rel="icon" type="image/png" href="icon.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -175,10 +176,10 @@
             </h1>
 
 <p class="font-body-base text-body-base text-on-surface-variant max-w-xl">
-                So some of you liked the duolingo for ENT app I created so I in my benevolence decided to release it, because I am awesome
+                So some of you liked the duolingo for ENT app I created so I in my benevolence decided to release it, because I am awesome, appologies to iOS users, uhm sorry
             </p>
 <div class="flex flex-wrap items-center gap-md mt-sm">
-<button class="bg-primary-container text-on-primary-container font-label-mono text-label-mono px-lg py-3 rounded-lg font-bold hover:brightness-110 transition-all flex items-center gap-2">
+<button id="download-btn" class="bg-primary-container text-on-primary-container font-label-mono text-label-mono px-lg py-3 rounded-lg font-bold hover:brightness-110 transition-all flex items-center gap-2">
                     Download App
                     <span class="material-symbols-outlined">arrow_forward</span>
 </button>
@@ -351,8 +352,30 @@ I like to see myself as a CEO. I have a non-existent company called Kangaroo Tec
         });
         
         // Command palette hover trigger (via the top nav hint)
-        document.querySelector('.cmd-k-hint').addEventListener('click', () => {
-            palette.classList.remove('opacity-0', 'pointer-events-none');
+        const cmdKHint = document.querySelector('.cmd-k-hint');
+        if (cmdKHint) {
+            cmdKHint.addEventListener('click', () => {
+                palette.classList.remove('opacity-0', 'pointer-events-none');
+            });
+        }
+
+        // Download APK from Pixeldrain
+        const downloadBtn = document.getElementById('download-btn');
+        downloadBtn.addEventListener('click', () => {
+            const icon = downloadBtn.querySelector('.material-symbols-outlined');
+            const originalLabel = downloadBtn.childNodes[0].textContent;
+
+            downloadBtn.disabled = true;
+            downloadBtn.childNodes[0].textContent = 'Downloading...';
+            icon.textContent = 'hourglass_empty';
+
+            window.open('https://github.com/roo-tech-300/port/releases/download/app/application-18f9d18f-0351-4d02-ae51-e8d3d1ff0904.apk', '_blank');
+
+            setTimeout(() => {
+                downloadBtn.childNodes[0].textContent = originalLabel;
+                icon.textContent = 'arrow_forward';
+                downloadBtn.disabled = false;
+            }, 2500);
         });
 
         // Copy Email interaction
