@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LinkedIn | Eluzia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#001849",
+                    "surface-container-lowest": "#0b0e16",
+                    "on-tertiary": "#5d1900",
+                    "secondary-container": "#444951",
+                    "surface-tint": "#b3c5ff",
+                    "on-secondary-container": "#b4b9c2",
+                    "on-surface": "#e1e2ee",
+                    "tertiary-fixed-dim": "#ffb59d",
+                    "secondary": "#c2c7d0",
+                    "on-background": "#e1e2ee",
+                    "surface-container": "#1d1f28",
+                    "tertiary": "#ffb59d",
+                    "surface-container-high": "#272a33",
+                    "surface": "#10131c",
+                    "on-tertiary-container": "#fff6f4",
+                    "background": "#10131c",
+                    "tertiary-container": "#cc4204",
+                    "on-secondary-fixed": "#171c23",
+                    "on-tertiary-fixed-variant": "#832600",
+                    "tertiary-fixed": "#ffdbd0",
+                    "secondary-fixed-dim": "#c2c7d0",
+                    "surface-container-highest": "#32343e",
+                    "on-primary-fixed-variant": "#003fa4",
+                    "inverse-primary": "#0054d6",
+                    "surface-dim": "#10131c",
+                    "on-primary-container": "#f8f7ff",
+                    "outline": "#8c90a1",
+                    "surface-bright": "#363943",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#dae1ff",
+                    "on-surface-variant": "#c2c6d8",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#0066ff",
+                    "outline-variant": "#424656",
+                    "primary": "#b3c5ff",
+                    "on-secondary-fixed-variant": "#42474f",
+                    "on-secondary": "#2c3138",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#191b24",
+                    "on-tertiary-fixed": "#390c00",
+                    "inverse-surface": "#e1e2ee",
+                    "inverse-on-surface": "#2e303a",
+                    "on-primary": "#002b75",
+                    "secondary-fixed": "#dee3ec",
+                    "surface-variant": "#32343e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "xl": "48px",
+                    "gutter": "16px",
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "md": "16px",
+                    "margin-desktop": "32px",
+                    "lg": "24px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "body-base": ["Inter"],
+                    "label-mono": ["JetBrains Mono"],
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-caps": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #080A0A;
+            color: #e1e2ee;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .obsidian-card {
+            background-color: #121516;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+        }
+
+        .noise-bg::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("https://grainy-gradients.vercel.app/noise.svg");
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="noise-bg overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 flex items-center h-14 px-margin-desktop">
+<a href="index.html" class="flex items-center gap-sm">
+<img alt="Logo" class="h-8 w-8 rounded-full object-cover" src="icon.png"/>
+</a>
+</nav>
+<main class="mt-14 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop pb-xl">
+<section class="py-20 md:py-32 flex flex-col items-center justify-center gap-md text-center">
+<div class="obsidian-card p-lg max-w-xl">
+<span class="material-symbols-outlined text-primary text-4xl block mb-md">sentiment_dissatisfied</span>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-md">Sowwi don't have a linkedIn account</h1>
+<a href="index.html" class="inline-block font-label-mono text-label-mono text-primary underline underline-offset-2 hover:brightness-110 transition-all mt-md">← Back home</a>
+</div>
+</section>
+</main>
+</body>
+</html>
